@@ -30,7 +30,7 @@ export default class TodoForm extends Component {
             <div>
                 <form onSubmit={this.submit}>
                     <input name="item" value={this.state.item} onChange={this.change} placeholder="Todo item" />
-                    <button onClick={this.submit}>Submit</button>
+                    <button className="add" onClick={this.submit}>Add Todo</button>
                 </form>
             </div>
         )

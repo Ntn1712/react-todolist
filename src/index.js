@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 // import TodoList from './todolist';
 import TodoForm from './components/todoform';
 import Todo from './components/todo';
-
+import "./style.css";
 
 
 class App extends Component {
@@ -42,11 +42,14 @@ class App extends Component {
     render() {
         return (
             <div>
+                <div>
+                    <h1>Grocery To-Do List</h1>
+                </div>
                 <TodoForm onSubmit={this.addTodo} />
                 {this.state.todos.map(todo => (
                     <Todo key={todo.id} delete={() => this.delete(todo.id)} complete={() => this.complete(todo.id)} todo={todo} />
                 ))}
-                <div>
+                <div className="foot">
                     Todos Left: {this.state.todos.filter(todo => !todo.complete).length}
                 </div>
             </div>
